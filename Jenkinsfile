@@ -32,7 +32,7 @@ steps{
 
  stage('SAST'){
 
-        steps{
+        step{
             script{
 
             withSonarQubeEnv(credentialsId: 'sonar-api-key') {
@@ -46,7 +46,7 @@ steps{
 
 stage('Qualtiy gate'){
 
-        steps{
+        step{
             script{
 
         waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api-key3' {
