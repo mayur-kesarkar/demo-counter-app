@@ -30,7 +30,20 @@ steps{
 
     }
 
+ stage('SAST'){
 
+        steps{
+            scripts{
+
+            withSonarQubeEnv(credentialsId: 'sonar-api-key') {
+    // some block
+       sh 'mvn clean package sonar:sonar'
+}
+            }
+        }
+
+        
+    }
             
            } 
         }
