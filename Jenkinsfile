@@ -49,8 +49,8 @@ stage('Qualtiy gate'){
         steps{
             script{
 
-        waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api-key-2' {
-           sh 'mvn clean package sonar:sonar'
+        waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api-key3' {
+          
 }
             }
         }
