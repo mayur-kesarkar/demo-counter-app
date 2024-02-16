@@ -33,11 +33,10 @@ steps{
  stage('SAST'){
 
         steps{
-            scripts{
+            script{
 
             withSonarQubeEnv(credentialsId: 'sonar-api-key') {
-    // some block
-       sh 'mvn clean package sonar:sonar'
+               sh 'mvn clean package sonar:sonar'
 }
             }
         }
