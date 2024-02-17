@@ -58,6 +58,13 @@ stage('Qualtiy gate'){
         
     }
 
+        stage('nexus artificateupload'){
+
+            steps{
+                script{
+                    nexusArtifactUploader artifacts: [[artifactId: 'springboot', classifier: '', file: 'target/Uber.jar', type: 'jar']], credentialsId: 'admin', groupId: 'com.example', nexusUrl: '13.127.139.49:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'demo-app', version: '1.0.0'
+            }
+        }
         
            } 
         }
