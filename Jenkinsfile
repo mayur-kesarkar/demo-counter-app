@@ -35,7 +35,7 @@ steps{
         steps{
             script{
 
-           withSonarQubeEnv(credentialsId: 'sonar-api-key3') {
+           withSonarQubeEnv(credentialsId: 'sonar-api-key01') {
                sh 'mvn clean package sonar:sonar'
 }
             }
@@ -49,7 +49,7 @@ stage('Qualtiy gate'){
         steps{
             script{
 
-        waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api-key3' 
+        waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api-key01' 
           
 
             }
